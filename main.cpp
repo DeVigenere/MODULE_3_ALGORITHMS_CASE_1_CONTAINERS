@@ -1,13 +1,21 @@
-#include "make_map.h"
+#include "parcing.h"
 #include "filter_by_name.h"
 #include "max_score.h"
-#include "middle_score.h"
+#include "average_score.h"
+#include <iostream>
+#include <exception>
 
 
 int main() {
-	auto map = make_map("test.txt");
-	filter_by_name("Ivanov", map);
-	max_score(map);
-	middle_score(map);
+	std::map<std::string, int> map;
+	try {
+		map = parcing("test.txt");
+	}
+	catch (const std::exception& e) {
+		std::cerr << e.what();
+	}
 
+	auto vec = filter_by_name("Ivanov", map);
+	max_score(map);
+	average_score(map);
 }

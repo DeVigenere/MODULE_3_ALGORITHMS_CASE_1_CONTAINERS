@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
 #include <map>
+#include <vector>
 
-void filter_by_name(std::string name, std::map<std::string, int> map);
+std::vector<std::pair<std::string, int>> filter_by_name(const std::string& name, const std::map<std::string, int>& map);

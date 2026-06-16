@@ -1,9 +1,9 @@
 #include <string>
 #include <map>
 #include <fstream>
-#include "make_map.h"
+#include "parcing.h"
 
-std::map<std::string, int> make_map(std::string input_file) {
+std::map<std::string, int> parcing(const std::string& input_file) {
 	std::map<std::string, int> map_school;
 	std::ifstream in_file(input_file);
 	if (!in_file.is_open()) {
