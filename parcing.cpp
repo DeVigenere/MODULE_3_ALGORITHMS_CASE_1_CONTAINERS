@@ -14,9 +14,9 @@ std::map<std::string, int> parcing(const std::string& input_file) {
 		if (line.empty()) {
 			continue;
 		}
-		size_t dot_and_zapyatya = line.find(';');
-		std::string name = line.substr(0, dot_and_zapyatya);
-		int score = std::stoi(line.substr(dot_and_zapyatya + 1));
+		const size_t separation = line.find(';');
+		std::string name = line.substr(0, separation);
+		int score = std::stoi(line.substr(separation + 1));
 		map_school.emplace(name, score);
 	}
 	return map_school;
