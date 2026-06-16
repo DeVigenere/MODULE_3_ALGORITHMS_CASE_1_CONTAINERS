@@ -4,15 +4,11 @@
 #include "max_score.h"
 
 void max_score(const std::map<std::string, int>& map) {
-	int max;
-	if (map.begin()->second) {
-		max = map.begin()->second;
-	}
-	else {
-		std::cout << "the sheet is filled out incorrectly.";
+	if (map.empty()) {
+		std::cout << "No data!\n";
 		return;
-
 	}
+	int max = map.begin()->second;;
 	for (const auto& i: map) {
 		if (i.second > max) {
 			max = i.second;
